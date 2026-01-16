@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Circle, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -14,13 +14,13 @@ L.Icon.Default.mergeOptions({
 // Component to handle map view updates
 function MapViewUpdater({ center, zoom }) {
   const map = useMap();
-  
+
   useEffect(() => {
     if (center) {
       map.setView(center, zoom);
     }
   }, [center, zoom, map]);
-  
+
   return null;
 }
 
@@ -40,9 +40,9 @@ const MapComponent = ({ userLocation, dangerZones }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
+
       <MapViewUpdater center={center} zoom={zoom} />
-      
+
       {/* User location marker */}
       {userLocation && (
         <Circle
@@ -53,7 +53,7 @@ const MapComponent = ({ userLocation, dangerZones }) => {
           <Popup>Your Location</Popup>
         </Circle>
       )}
-      
+
       {/* Danger zones */}
       {dangerZones.map((zone) => (
         <Circle
