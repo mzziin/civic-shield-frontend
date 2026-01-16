@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://civic-shield-backend.onrender.com';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -21,13 +21,13 @@ export const authAPI = {
 
 // Location API
 export const locationAPI = {
-  updateLocation: (latitude, longitude) => 
+  updateLocation: (latitude, longitude) =>
     api.post('/location/update', { latitude, longitude })
 };
 
 // Incident API
 export const incidentAPI = {
-  reportIncident: (latitude, longitude) => 
+  reportIncident: (latitude, longitude) =>
     api.post('/incidents/report', { latitude, longitude }),
   getDangerZones: () => api.get('/incidents/danger-zones')
 };
