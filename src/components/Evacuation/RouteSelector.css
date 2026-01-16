@@ -1,0 +1,105 @@
+.route-selector-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.route-selector-modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.route-selector-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.route-selector-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.route-selector-close {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+.route-selector-close:hover {
+  color: #333;
+}
+
+.route-selector-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.route-selector-actions {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.route-selector-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.route-selector-button.primary {
+  background: #007bff;
+  color: white;
+}
+
+.route-selector-button.primary:hover {
+  background: #0056b3;
+}
+
+.route-selector-button.secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.route-selector-button.secondary:hover {
+  background: #545b62;
+}

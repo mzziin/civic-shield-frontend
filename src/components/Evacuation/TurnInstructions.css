@@ -1,0 +1,123 @@
+.turn-instructions {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  margin-bottom: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 1;
+}
+
+/* Custom scrollbar for turn instructions */
+.turn-instructions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.turn-instructions::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.turn-instructions::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.turn-instructions::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.turn-instructions-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #333;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding-bottom: 8px;
+  z-index: 1;
+}
+
+.turn-instructions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.turn-instruction-item {
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.turn-instruction-item.current {
+  border-left-color: #007bff;
+  background: #e7f3ff;
+}
+
+.turn-instruction-item.past {
+  border-left-color: #6c757d;
+  background: #f5f5f5;
+  opacity: 0.6;
+}
+
+.turn-instruction-item.upcoming {
+  border-left-color: #28a745;
+  background: white;
+}
+
+.turn-instruction-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.turn-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+}
+
+.turn-number.current {
+  background: #007bff;
+}
+
+.turn-number.past {
+  background: #6c757d;
+}
+
+.turn-number.upcoming {
+  background: #28a745;
+}
+
+.turn-instruction-details {
+  flex: 1;
+}
+
+.turn-instruction-text {
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.turn-instruction-text.current-text {
+  color: #007bff;
+}
+
+.turn-instruction-meta {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}

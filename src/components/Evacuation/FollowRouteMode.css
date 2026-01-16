@@ -1,0 +1,146 @@
+.follow-route-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+.follow-route-container .leaflet-container {
+  z-index: 1;
+}
+
+.follow-route-controls {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 380px;
+  width: calc(100% - 16px);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  pointer-events: none;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar for controls */
+.follow-route-controls::-webkit-scrollbar {
+  width: 6px;
+}
+
+.follow-route-controls::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.follow-route-controls::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.follow-route-controls::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.follow-route-controls > * {
+  pointer-events: auto;
+  width: 100%;
+}
+
+.follow-route-status {
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  background: #007bff;
+  font-size: 14px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.follow-route-status.navigating {
+  background: #007bff;
+}
+
+.follow-route-status.arrived {
+  background: #28a745;
+}
+
+.follow-route-actions {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.follow-route-button {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  min-width: 100px;
+}
+
+.follow-route-button.recalculate {
+  background: #ffc107;
+}
+
+.follow-route-button.recalculate:hover {
+  background: #e0a800;
+}
+
+.follow-route-button.exit {
+  background: #6c757d;
+}
+
+.follow-route-button.exit:hover {
+  background: #545b62;
+}
+
+.custom-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Ensure controls are visible on all screen sizes */
+@media (max-width: 768px) {
+  .follow-route-controls {
+    max-width: calc(100% - 16px);
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    max-height: calc(100vh - 100px);
+  }
+  
+  .follow-route-status {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  .follow-route-button {
+    font-size: 13px;
+    padding: 8px 10px;
+    min-width: 90px;
+  }
+  
+  .turn-instructions {
+    max-height: 250px;
+    padding: 10px;
+  }
+  
+  .turn-instructions-title {
+    font-size: 14px;
+  }
+}
